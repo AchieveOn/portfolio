@@ -1,0 +1,190 @@
+@use '../utilities/variables' as *;
+
+header {
+  background-color: rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(4px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  .header-inner {
+    max-width: 100%;
+    padding: 0 16px;
+    height: 72px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 768px) {
+      padding: 0 16px;
+    }
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    img { height: 40px; }
+
+    .logo-text {
+      font-family: 'Jost', sans-serif;
+      font-size: 24px;
+      font-weight: 500;
+      color: $color-main;
+      line-height: 1;
+      margin-top: 2px;
+    }
+  }
+
+  .nav-list {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li a {
+      font-weight: 500;
+      color: $color-main;
+      text-decoration: none;
+      transition: all 0.3s;
+      padding: 8px 12px;
+      border-radius: 4px;
+      &:hover { color: $color-accent; }
+    }
+    li:last-child a {
+      background-color: $color-accent;
+      color: $color-white;
+      font-weight: 700;
+      border-radius: 9999px;
+      padding: 8px 20px;
+      transition: background-color 0.3s;
+      &:hover { background-color: darken($color-accent, 10%); }
+    }
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .nav-desktop {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .nav-mobile {
+    display: none;
+
+    @media (max-width: 768px) {
+      display: block;
+      position: absolute;
+      top: 72px;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.8);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 1);
+      visibility: hidden;
+      //transform: translateY(-100%);
+      //transition:
+        //transform 0.3s ease,
+        //visibility 0s linear 0.3s;
+
+      &.is-open {
+        visibility: visible;
+        transform: translateY(0);
+        transition:
+          transform 0.3s ease,
+          visibility 0s linear 0s;
+      }
+
+      .nav-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        li + li { border-top: none; }
+
+        li a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 56px;
+          padding: 0;
+          background: transparent !important;
+          color: $color-white !important;
+          font-weight: 500 !important;
+          text-decoration: none;
+          border-radius: 0 !important;
+          transition: background 0.2s;
+          &:hover { background: rgba(255, 255, 255, 0.1); }
+        }
+      }
+    }
+
+    @media (min-width: 769px) {
+      display: none;
+    }
+  }
+
+  .hamburger {
+    display: none;
+
+    @media (max-width: 768px) {
+      display: block;
+      position: relative;
+      width: 40px;
+      height: 40px;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      overflow: visible;
+      z-index: 1100;
+
+      span {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 32px;
+        height: 2px;
+        background: $color-main !important;        // ← 常にメインカラー
+        border-radius: 1px;
+        transform-origin: center center;
+        transition: transform 0.3s ease, opacity 0.2s ease;
+        transform: translate(-50%, -50%);
+      }
+    span:nth-child(1) { transform: translate(-50%, -50%) translateY(-8px); }
+    span:nth-child(2) { /* 真ん中 */ }
+    span:nth-child(3) { transform: translate(-50%, -50%) translateY(8px); }
+
+    /* is-open 時に rotate だけ差し替え */
+    &.is-open {
+      span:nth-child(1) {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+      span:nth-child(2) {
+        opacity: 0;
+      }
+      span:nth-child(3) {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+
+      /* ボタンフォーカス時のハイライトを消す */
+      &:focus,
+      &:active {
+        outline: none;
+        background: transparent;
+      }
+    }
+
+    @media (min-width: 769px) {
+      display: none;
+    }
+  }
+}

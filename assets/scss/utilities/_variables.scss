@@ -1,0 +1,21 @@
+// scss/utilities/_variables.scss
+
+// 色
+$color-bg: #F5F0E9;         // ベース（ノイズベージュ）
+$color-main: #2F3C4F;       // メイン（テキスト・見出し）
+$color-accent: #84B1C6;     // アクセント（ボタン、リンクなど）
+$color-white: #ffffff;
+$color-black: #000000;
+
+// フォント
+$font-base: 'Noto Sans JP', sans-serif;
+
+// 余白（使いたい場合）
+$space-xs: 4px;
+$space-sm: 8px;
+$space-md: 16px;
+$space-lg: 32px;
+$space-xl: 64px;
+
+// モバイル時のスクロール位置
+$header-height: 72px;

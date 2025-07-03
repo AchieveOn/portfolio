@@ -1,0 +1,15 @@
+@use '../utilities/variables' as *;
+
+.button {
+  display: inline-block;
+  padding: $space-sm $space-md;
+  background-color: $color-accent;
+  color: $color-white;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: darken($color-accent, 10%);
+  }
+}

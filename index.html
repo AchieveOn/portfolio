@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Achive On - Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Google Fonts: Noto Sans JP -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap" rel="stylesheet">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  integrity="sha512-pOa9Oj4Vn0b1N3QzhYvNCM0XK76XUxrT1i2eTkjW+v4xjpYXG7+g6czlScJnD5Qv5jjuSfqWDeVosY7Vw3h5Vg=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+<link
+       rel="stylesheet"
+       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+       crossorigin="anonymous"
+     />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script type="module"
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js">
+  </script>
+  <script nomodule
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js">
+  </script>
+</head>
+<body id="top">
+  <!-- ローディング画面 -->
+  <div id="loader">
+    <img id="loader-logo" src="./assets/images/opening.png" alt="Achion ロゴ">
+    <div id="loader-text">ACHION</div>
+    <div id="loader-circle"></div>
+  </div>
+
+<div id="content">
+  
+<!-- ヘッダー -->
+<header>
+  <div class="header-inner">
+    <a href="#top" class="logo">
+      <img src="./assets/images/logo.png" alt="Achive On ロゴ" />
+      <span class="logo-text">ACHION</span>
+    </a>
+
+    <!-- デスクトップ用ナビ -->
+    <nav class="nav-desktop">
+      <ul class="nav-list">
+        <li><a href="#service">SERVICE</a></li>
+        <li><a href="#works">WORKS</a></li>
+        <li><a href="#flow">FLOW</a></li>
+        <li><a href="#qa">Q&amp;A</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </nav>
+
+    <!-- ハンバーガーボタン -->
+    <button class="hamburger" aria-label="メニューを開く">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <!-- モバイル用スライドナビ -->
+  <nav class="nav-mobile">
+    <ul class="nav-list">
+      <li><a href="#service">SERVICE</a></li>
+      <li><a href="#works">WORKS</a></li>
+      <li><a href="#flow">FLOW</a></li>
+      <li><a href="#qa">Q&amp;A</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+  <!-- ヒーローセクション -->
+    <section class="hero">
+     <div class="container">
+         <p class="hero-lead">Achive On</p>
+        <h2 class="hero-title">Portfolio Site</h2>
+         <p class="hero-description">Web Design</p>
+     </div>
+
+<!-- ───── 飛行パス ───── -->
+  <svg class="flight-path"
+       viewBox="0 0 1000 500"
+       preserveAspectRatio="none"
+       aria-hidden="true">
+    <path d="
+  M250 260
+  Q320 220 380 200
+  Q430 180 480 230
+  Q540 280 600 170
+  C700  80 640   0 500 120
+  S340 320 560 320
+  S800 210 880 120
+  S700 100 800  -50
+  T880  0
+  "
+    fill="none"/>
+  </svg>
+
+
+  <!-- 紙飛行機（ゴール位置）-->
+  <ion-icon name="paper-plane-outline"
+            class="plane"
+            role="presentation"></ion-icon>
+    </section>
+
+
+<!-- サービス紹介 -->
+<section id="service" class="section service">
+  <div class="container">
+    <h2 h2 class="section-title">SERVICE <span>できること</span></h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Web制作</h3>
+        <img src="./assets/images/web-image1.png" alt="Web制作" class="card-image">
+        <p class="description">
+          あなたの想いをお聞きし、理想のWebサイトを作り上げます。レスポンシブデザインを標準装備いたします。公開後もアクセス解析をもとに改善提案を行い、あなたのビジネスに誠実に寄り添います。
+        </p>
+        <p class="types">Webサイト／Webアプリ／ランディングページ／バナー など</p>
+        <span class="tag">#HTML　#CSS　#WordPress　#STUDIO　#SCSS　#JavaScript　#GSAP</span>
+      </div>
+      <div class="card">
+        <h3>グラフィックデザイン</h3>
+        <img src="./assets/images/web-image2.png" alt="グラフィックデザイン" class="card-image">
+        <p class="description">
+          チラシやショップカードであなたの魅力を直感的に伝えます。配色やレイアウトの細部まで丁寧に検討し、初めてのお客様にも安心感を与えるデザインをご提案させていただきます。
+        </p>
+        <p class="types">チラシ／ショップカード など</p>
+        <span class="tag">#Canva／#Figma／#Illustrator／#Photoshop</span>
+      </div>
+      <div class="card">
+        <h3>業務効率化</h3>
+        <img src="./assets/images/web-image3.png" alt="業務効率化" class="card-image">
+        <p class="description">
+          日々の業務でお困りの点を丁寧にヒアリングし、使いやすい自動化ツールを開発します。Google WorkspaceやGASを活用し、定型作業を自動化して時間と手間を削減。導入後も操作方法などをサポートします。
+        </p>
+        <p class="types">GoogleWorkspace／Slack など</p>
+        <span class="tag">#Google Apps Script／#VBA</span>
+      </div>
+    </div>
+  </div>
+    <svg
+    class="section-divider"
+    viewBox="0 0 1000 2"
+    preserveAspectRatio="none"
+    aria-hidden="true"
+  >
+    <line x1="0" y1="1" x2="1000" y2="1" />
+  </svg>
+</section>
+
+
+<section id="works" class="section works">
+  <div class="container">
+    <h2 h2 class="section-title">WORKS <span>制作実績</span></h2>
+    <div class="cards">
+      <div class="card">
+        <img src="./assets/images/work1.png" alt="制作物1">
+        <div class="description">
+          <span class="tag">#Web制作・WordPress</span>
+          <p class="title">架空の美術館のWebサイト</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="./assets/images/work2.png" alt="制作物2">
+        <div class="description">
+          <span class="tag">#Web制作・HTML/CSS</span>
+          <p class="title">ポートフォリオサイト</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="./assets/images/work3.png" alt="制作物3">
+        <div class="description">
+          <span class="tag">#Web制作/SCSS/GSAP</span>
+          <p class="title">架空の家具店のWebサイト</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="./assets/images/work4.png" alt="制作物4">
+        <div class="description">
+          <span class="tag">#Web制作</span>
+          <p class="title">学習用Webアプリ</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="./assets/images/work5.png" alt="制作物5">
+        <div class="description">
+          <span class="tag">#Web制作/WordPress</span>
+          <p class="title">飲食店の公式Webサイト</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="./assets/images/work6.png" alt="制作物6">
+        <div class="description">
+          <span class="tag">#グラフィックデザイン/Canva/Illustrator</span>
+          <p class="title">フライヤー／ショップカード</p>
+        </div>
+      </div>
+    </div>
+  </div>
+      <svg
+    class="section-divider"
+    viewBox="0 0 1000 2"
+    preserveAspectRatio="none"
+    aria-hidden="true"
+  >
+    <line x1="0" y1="1" x2="1000" y2="1" />
+  </svg>
+</section>
+
+
+
+
+  <!-- FLOW -->
+  <section id="flow" class="section flow">
+  <div class="container">
+    <h2 class="section-title">FLOW <span>制作の流れ</span></h2>
+    <ul class="timeline">
+      <li>
+        <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+        <p>お問い合わせ<br><small>まずはお気軽に！</small></p>
+      </li>
+      <li>
+        <span class="icon"><i class="fa-solid fa-comments"></i></span>
+        <p>ヒアリング<br><small>対面／Zoomなど</small></p>
+      </li>
+      <li>
+        <span class="icon"><i class="fa-solid fa-file-invoice"></i></span>
+        <p>お見積もり<br><small>金額・納期を明確に</small></p>
+      </li>
+      <li>
+        <span class="icon"><i class="fa-solid fa-pencil-ruler"></i></span>
+        <p>制作開始<br><small>素材をご共有ください</small></p>
+      </li>
+      <li>
+        <span class="icon"><i class="fa-solid fa-check-square"></i></span>
+        <p>ご確認・修正<br><small>必要に応じて修正</small></p>
+      </li>
+      <li>
+        <span class="icon"><i class="fa-solid fa-cloud-upload-alt"></i></span>
+        <p>納品<br><small>データ or サーバ反映</small></p>
+      </li>
+    </ul>
+  </div>
+      <svg
+    class="section-divider"
+    viewBox="0 0 1000 2"
+    preserveAspectRatio="none"
+    aria-hidden="true"
+  >
+    <line x1="0" y1="1" x2="1000" y2="1" />
+  </svg>
+</section>
+
+<!-- Q&A -->
+<section id="qa" class="section qa">
+  <div class="container">
+    <h2 class="section-title">Q&A <span>よくあるご質問</span></h2>
+    <p class="qa-lead">ご依頼前によくいただく内容をまとめました。<br>安心してご相談いただけるよう事前にご確認いただけます。</p>
+
+    <div class="qa-list">
+
+      <div class="qa-item">
+        <button class="qa-question">
+          <span class="qa-question-text">Q1：Webページの納品までの流れを教えてください</span>
+        </button>
+        <div class="qa-answer">
+          <p>A：基本的な流れは以下の通りです：</p>
+          <ol>
+            <li><strong>【お問い合わせ】</strong>…ご希望内容を簡単にお知らせください</li>
+            <li><strong>【ヒアリング】</strong>…対面またはZoomで詳細を伺います</li>
+            <li><strong>【お見積もり・内容確認】</strong>…作業内容・金額・納期をご確認いただきます</li>
+            <li><strong>【制作開始】</strong>…必要な素材などをご提供いただき、作業に入ります</li>
+            <li><strong>【ご確認・修正】</strong>…完成後にご確認いただき、必要に応じて修正します</li>
+            <li><strong>【納品】</strong>…データ納品またはサーバー反映にて納品完了です</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="qa-item">
+        <button class="qa-question">
+          <span class="qa-question-text">Q2：納品までの日数はどれくらいかかりますか？</span>
+        </button>
+        <div class="qa-answer">
+          <p>A：ご依頼内容によりますが、目安は以下の通りです：</p>
+          <ul>
+            <li>バナー制作：3日〜5日程度</li>
+            <li>HTML/CSSページ制作：2週間程度</li>
+            <li>WordPress制作：3週間程度</li>
+          </ul>
+          <p>お急ぎの場合も調整できる場合がありますので、ご相談ください。</p>
+        </div>
+      </div>
+
+      <div class="qa-item">
+        <button class="qa-question">
+          <span class="qa-question-text">Q3：まだ内容がはっきり決まっていなくても相談できますか？</span>
+        </button>
+        <div class="qa-answer">
+          <p>A：はい、もちろんです！「こんなことできる？」という段階でもお気軽にご相談ください。内容を整理しながら一緒に進めていければと思います。</p>
+        </div>
+      </div>
+
+      <div class="qa-item">
+        <button class="qa-question">
+          <span class="qa-question-text">Q4：料金は固定ですか？後から追加になることはありますか？</span>
+        </button>
+        <div class="qa-answer">
+          <p>A：原則として、事前にお見積もりした金額で進めます。大きな追加や変更が発生した場合は、その都度ご相談させていただきますのでご安心ください。</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+      <svg
+    class="section-divider"
+    viewBox="0 0 1000 2"
+    preserveAspectRatio="none"
+    aria-hidden="true"
+  >
+    <line x1="0" y1="1" x2="1000" y2="1" />
+  </svg>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section contact">
+  <div class="container">
+    <h2 class="section-title">CONTACT <span>お問い合わせ</span></h2>
+    <p class="contact-lead">お仕事のご依頼・ご相談などございましたら下記までお気軽にご連絡ください。改めてご返信いたします。</p>
+  <div class="contact-mail">
+  <a href="mailto:aaa@aaa.com" class="contact-email">
+    <!-- ===== インライン SVG ===== -->
+    <svg xmlns="http://www.w3.org/2000/svg"
+         class="icon"
+         viewBox="0 0 24 24"
+         fill="none"
+         stroke-width="1.5"
+         stroke="currentColor"
+         aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round"
+            d="M2.25 6.75a.75.75 0 0 1 .75-.75h18a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-18a.75.75 0 0 1-.75-.75V6.75z"/>
+      <path stroke-linecap="round" stroke-linejoin="round"
+            d="m2.25 6.75 9.72 7.29a.75.75 0 0 0 .88 0l9.65-7.24"/>
+    </svg>
+    aaa@aaa.com
+  </a>
+</div>
+    <svg
+    class="section-divider"
+    viewBox="0 0 1000 2"
+    preserveAspectRatio="none"
+    aria-hidden="true"
+  >
+    <line x1="0" y1="1" x2="1000" y2="1" />
+  </svg>
+</section>
+
+
+  <!-- フッター -->
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-main">
+    <!-- ロゴ＋サイト名 -->
+    <div class="footer-logo">
+      <img src="./assets/images/logo.png" alt="Achi ON ロゴ" />
+      <span class="footer-logo-text">ACHION</span>
+    </div>
+    <!-- 連絡先 -->
+    <div class="footer-contact">
+       <div class="footer-contact">
+        <a
+  href="https://twitter.com/achiachi_dayo"
+  class="footer-social"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <img
+    src="https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/x.svg"
+    alt="X"
+    class="icon"
+  />
+  @achiachi_dayo
+</a>
+
+</div>
+</div>
+
+
+
+    <!-- コピーライト -->
+    <div class="footer-copy">
+      © 2025 ACHION. All Rights Reserved.
+    </div>
+  </div>
+</footer>
+</div>
+
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>

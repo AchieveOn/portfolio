@@ -1,0 +1,81 @@
+@use '../utilities/variables' as *;
+
+html, body {
+  //height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: $font-base;
+  font-weight: 400;
+  color: $color-main;
+  background-color: $color-bg;
+  background-image: url('../assets/images/noise.png');
+  background-repeat: repeat;
+  background-size: 100px;
+  background-attachment: fixed; // ← これを追加するとスクロールでも固定背景になる
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: $color-main;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+ section {
+   scroll-margin-top: $header-height;
+ }
+
+.section { position: relative; }
+.section-inner {
+  position: absolute;   // ScrollTrigger が書き換える前の状態
+  bottom: auto;
+  left: 0;
+  right: 0;
+}
+
+/* style.css の先頭あたりに追加 */
+@media (max-width: 768px) {
+  /* モバイル時はローダーを完全に消す */
+  #loader {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+  /* コンテンツを常に表示 */
+  #content {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+
+
+// 直線の点線区切り
+.section-divider {
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  width: 100%;
+  height: clamp(16px, 4vw, 32px);  // SVG の高さがこれに対応
+
+  pointer-events: none;
+  z-index: 0;
+
+  line {
+    stroke: $color-accent;          // 例：#A9C7D4
+    stroke-width: 0.3;
+    stroke-dasharray: 12 10;        // 実線12px＋間隔10px
+    stroke-linecap: round;
+    opacity: 0.45;
+  }
+    // レスポンシブ（例：画面幅1024px以下）
+  @media (max-width: 780px) {
+    bottom: -10px;    // モバイルなど狭い画面では-10pxに
+  }
+}

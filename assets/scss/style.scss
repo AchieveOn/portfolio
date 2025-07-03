@@ -1,0 +1,17 @@
+// style.scss
+
+// ユーティリティ（変数など）は一番最初に読み込む！
+@use 'utilities/variables' as *;
+
+// 以下、他のパーツ
+@use 'base/reset';
+@use 'base/base';
+@use 'layout/header';
+@use 'layout/footer';
+@use 'layout/sections';
+@use 'components/button';
+@use 'components/accordion';
+@use 'components/card';
+@use 'layout/flow';
+@use 'components/decorations';
+@use 'components/opening';

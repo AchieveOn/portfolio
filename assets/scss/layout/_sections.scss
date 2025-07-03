@@ -1,0 +1,457 @@
+@use '../utilities/variables' as *;
+
+/* =================================================
+   HERO  セクション
+   PC  : 高さ 50vh（画面の半分）
+   SP  : 高さ 80vh（全画面に近い）
+   横幅は常に全幅。左右の余白は .container に 64px。
+   ================================================ */
+
+   
+.hero {
+  /* ── 縦幅を固定 ─────────────────── */
+  min-height: 50vh;          // PC：画面高の 50 %
+  width: 100%;               // 横幅は常に全幅
+
+  /* ── 中身を縦中央に寄せる（任意）── */
+  display: flex;
+  align-items: center;
+
+  /* 上下パディング：ヘッダー分の 80px ＋任意の下余白 */
+  padding: 80px 0;
+
+  .container {
+    padding-left: 64px;
+    padding-right: 64px;
+    margin: 0;
+    max-width: none;        // 幅制限を解除
+  }
+
+  /* ── ブレークポイント ───────────── */
+  @media (max-width: 768px) {
+    min-height: 80vh;       // やや短めに調整
+    padding: 16px 0;        // ★ SP：上下 16px
+    .container {
+      padding-left: 16px;   // ★ SP：左右 16px
+      padding-right: 16px;
+    }
+  }
+
+  /* ── テキスト装飾 ─────────────── */
+  .hero-lead   { font-size: 40px; font-weight: 500; color: $color-main; line-height: 1; margin: 0; }
+  .hero-title  { font-size: 64px; font-weight: 700; color: $color-main; line-height: 1; margin: 0; margin-left: -4px; }
+  .hero-description { font-size: 32px; font-weight: 400; color: $color-main; line-height: 1.5; margin: 0; }
+
+}
+
+
+
+/* =================================================
+   SERVICE セクション
+   ================================================ */
+.section.service {
+  padding: 30px 0;
+  .container { padding: 0 64px; }
+
+  .section-title {
+    font-size: 2.4rem; font-weight: bold; margin-bottom: 40px;
+    display: flex; align-items: baseline; gap: 1rem;
+    span { font-size: 24px; font-weight: normal; }
+  }
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px;
+    padding: 0 64px;
+    justify-content: center;
+
+    .card {
+      flex: 1 1 calc(33.333% - 32px);
+      max-width: calc(33.333% - 32px);
+      height: 560px;
+      background-color: #f5f5f5;
+      padding: 24px 16px;
+      border-radius: 16px;
+      border: 1px solid #ccc;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+
+      h3 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 0px;
+      }
+
+      .card-image {
+        width: 200px;
+        height: 200px;
+        object-fit: contain;
+        border-radius: 16px;
+        margin: 0 auto 0;
+        display: block;
+      }
+
+      .description {
+        font-size: 16px;
+        text-align: left;
+        line-height: 1.7;
+        margin-bottom: 8px;
+      }
+
+      .types {
+        font-size: 15px;
+        text-align: center;
+        line-height: 1.6;
+        margin-top: auto;
+        margin-bottom: 8px;
+      }
+
+      .tag {
+        font-size: 15px;
+        color: #e84c9a;
+        text-align: center;
+        line-height: 1.6;
+        margin-top: auto;
+        margin-bottom: 8px;
+      }
+
+    }
+  }
+
+  /* ===== 3枚 → 2枚に切替：1200px以下 ===== */
+  @media screen and (max-width: 1200px) {
+    .cards {
+      .card {
+        flex: 1 1 calc(50% - 24px);
+        max-width: calc(50% - 24px);
+      }
+    }
+  }
+
+  /* ===== 2枚 → 1枚に切替：720px以下 ===== */
+  @media screen and (max-width: 1000px) {
+    .cards {
+      .card {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+    }
+  }
+    /* ===== レスポンシブ全体パディング調整（768px以下） ===== */
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 16px;
+    }
+
+    h2 {
+      padding-left: 16px;
+      margin-bottom: 32px;
+    }
+
+    .cards {
+      padding: 0 16px;
+      gap: 24px;
+    }
+
+  }
+
+}
+
+
+/* =================================================
+   WORKS セクション
+   ================================================ */
+.works {
+  padding: 30px 0;
+  .container { padding: 0 64px; }
+
+  .section-title {
+    font-size: 2.4rem; font-weight: bold; margin-bottom: 40px;
+    display: flex; align-items: baseline; gap: 1rem;
+    span { font-size: 24px; font-weight: normal; }
+  }
+
+  
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); // PC：2列
+    gap: 40px;
+
+    .card:nth-child(even) {
+      transform: translateY(64px);
+    }
+  }
+
+  .card {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+      border-radius: 24px;
+      filter: brightness(60%);
+      transition: transform 0.3s ease, filter 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+        filter: brightness(100%);
+      }
+    }
+
+    .description {
+      margin-top: 12px;
+
+      .tag {
+        font-size: 0.9rem;
+        color: #e84c9a;
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .title {
+        font-size: 1rem;
+        font-weight: bold;
+        color: $color-main;
+      }
+    }
+  }
+
+  /* ★ SP：パディング調整＆カード1列表示に変更 */
+  @media (max-width: 768px) {
+    padding: 16px 0;
+
+    .container {
+      padding: 0 16px;
+    }
+
+    .cards {
+      grid-template-columns: 1fr; // カードを1列に
+      gap: 32px;
+
+      .card:nth-child(even) {
+        transform: translateY(0); // 段差をなくす
+      }
+    }
+
+    .card img {
+      height: 200px; // SP時の高さ
+      filter: none !important; // ★ SP時は暗くしない
+    }
+  }
+}
+
+
+
+
+/* =================================================
+   FLOW セクション
+   ================================================ */
+.flow {
+  padding: 30px 0;
+  .container { padding: 0 64px; }
+
+  .section-title {
+    font-size: 2.4rem; font-weight: bold; margin-bottom: 40px;
+    display: flex; align-items: baseline; gap: 1rem;
+    span { font-size: 24px; font-weight: normal; }
+  }
+
+  /* ★ SP：パディング調整 */
+  @media (max-width: 768px) {
+    padding: 16px 0;
+    .container { padding: 0 16px; }
+  }
+}
+
+.qa {
+  padding: 80px 0;
+
+  .container {
+    padding: 0 64px;
+  }
+
+  .section-title {
+    font-size: 2.4rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+
+    span {
+      font-size: 24px;
+      font-weight: normal;
+    }
+  }
+
+  .qa-lead {
+    max-width: 700px;
+    margin: 0 auto 2rem;
+  }
+
+  .qa-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .qa-question {
+    width: 700px;
+    background: #f4f4f4;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    padding: 1rem 3rem 1rem 1rem;
+    line-height: 1.5;
+    cursor: pointer;
+    color: $color-main;
+    position: relative;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      background: url('../assets/images/down.png') no-repeat center/contain;
+      transition: transform 0.5s ease;
+    }
+
+    &:hover {
+      background: #e0e0e0;
+    }
+
+    /* 質問文だけを改行対象にする */
+    .qa-question-text {
+      display: inline-block;
+    }
+  }
+
+  .qa-item.active .qa-question::after {
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  .qa-answer {
+    display: none;
+    padding: 1rem 0 0.5rem 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .qa-answer.open {
+    opacity: 1;
+  }
+
+  .qa-answer.fadeout {
+    opacity: 0;
+  }
+
+  p,
+  ul,
+  ol {
+    margin: 0;
+    padding-left: 1rem;
+  }
+
+  /* ★ SP：パディング＋質問文のみ17文字で折り返し */
+  @media (max-width: 768px) {
+    padding: 16px 0;
+
+    .container {
+      padding: 0 16px;
+    }
+
+    .qa-lead,
+    .qa-list,
+    .qa-question {
+      width: 100%;
+    }
+
+    .qa-question-text {
+      max-width: 17em;         // ≒ 320px（16px × 20文字）
+      word-break: break-word;  // 単語の途中で折り返す（日本語にも対応）
+    }
+  }
+}
+
+.contact {
+  padding: 30px 0;
+
+  .container {
+    padding: 0 64px;
+  }
+
+  .section-title {
+    font-size: 2.4rem; font-weight: bold; margin-bottom: 40px;
+    display: flex; align-items: baseline; gap: 1rem;
+    span { font-size: 24px; font-weight: normal; }
+  }
+
+.contact-lead {
+  /* ① 自分の幅を“文字の長さ”に合わせて縮める  */
+  width: fit-content;          // Safari など古いブラウザが気になる場合は
+  /* display: inline-block; */ // に置き換えても OK
+
+  /* ② 左右を auto にして中央へ */
+  margin: 0 auto 2rem;
+
+  /* ③ 折り返した行も中央にそろえるなら */
+  text-align: center;
+}
+
+
+  /* メール ＆ X（旧Twitter） */
+  .contact-mail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $space-sm;
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: $space-xs;
+    color: $color-main;        // ← 文字色 = アイコン色
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $color-accent;    // ← ホバー時に両方変わる
+    }
+
+    .icon {
+      transform: translateY(3px);  // 👈 数字を ± で調整
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;          // テキストが折返してもアイコン幅固定
+      /* stroke は SVG 内で currentColor を拾うので指定不要 */
+    }
+  }  
+}
+
+    @media (max-width: 768px) {
+    padding: 16px 0;
+
+    .container {
+      padding: 0 16px;
+    }
+  }
+}

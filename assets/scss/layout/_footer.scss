@@ -1,0 +1,88 @@
+@use '../utilities/variables' as *;
+
+.site-footer {
+  /* セクションと同じベージュノイズ背景 */
+  background-color: $color-bg;
+  background-image: url('../assets/images/noise.png');
+  background-repeat: repeat;
+  background-size: 100px;
+  /* footer のみ固定背景が不要ならコメントアウト */
+  // background-attachment: fixed;
+
+  color: $color-main;
+  text-align: center;
+  padding: $space-lg 0;
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $space-md;
+  }
+
+  /* ロゴ＋連絡先をまとめた箱を左から32pxに寄せる */
+  .footer-main {
+    display: inline-block;             // 幅を中身に合わせる
+    text-align: left;                  // 内部は左揃え
+    margin: 0 auto $space-md 32px;     // 上0／右auto／下スペース／左32px
+  }
+
+  /* ロゴ＋サイト名 */
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: $space-sm;
+    margin-bottom: 8px;
+
+    img {
+      height: 40px;
+      display: block;
+    }
+
+    .footer-logo-text {
+      font-family: 'Jost', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 1;
+      color: $color-main;
+    }
+  }
+
+  /* メール ＆ X（旧Twitter） */
+  .footer-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $space-sm;
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: $space-xs;
+      color: $color-main;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $color-accent;
+      }
+
+      .icon {
+        width: 24px;
+        height: 24px;
+        display: block;
+        fill: $color-main;
+      }
+    }
+  }
+
+  /* コピーライト */
+  .footer-copy {
+    font-size: 0.875rem;
+    color: $color-main;
+    margin-top: $space-sm;
+  }
+}

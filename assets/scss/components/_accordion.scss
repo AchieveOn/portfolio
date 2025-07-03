@@ -1,0 +1,55 @@
+@use '../utilities/variables' as *;
+
+// Q&A セクション全体
+.qa {
+  .qa-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .qa-item {
+    border-left: 4px solid #999;
+    padding-left: 1rem;
+  }
+
+  .qa-question {
+    cursor: pointer;
+    padding: 0.75em 1em;
+    background-color: #f4f4f4;
+    border: none;
+
+    // ↓ ここが重要！
+    display: inline-block; // 背景をテキストの幅に合わせる
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    line-height: 1.6;
+
+    &:hover {
+      background-color: #e0e0e0;
+    }
+  }
+
+  .qa-answer {
+    display: none;
+    padding: 0 1rem 1rem;
+    font-size: 16px;
+    line-height: 1.7;
+
+    p,
+    ul,
+    ol {
+      margin-left: 0;
+      padding-left: 1rem;
+    }
+
+    &.open {
+      display: block;
+    }
+  }
+
+  .qa-item.active .qa-answer {
+    display: block;
+  }
+}

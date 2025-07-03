@@ -1,0 +1,50 @@
+// ────────────────────────────────────
+// _loader.scss（あるいは _base.scss の該当箇所）
+// ────────────────────────────────────
+
+#loader {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: grid;
+  place-items: center;
+  z-index: 9999;
+  overflow: hidden; /* 子要素のはみ出しを隠す */
+}
+
+#loader-logo {
+  position: absolute;
+  width: 200px;           /* お好みで調整 */
+  object-fit: contain;
+  z-index: 3;
+
+  /* ← ここが肝！最初から上に隠す */
+  transform: translateY(-500px);
+  opacity: 1;
+}
+
+#loader-text {
+  position: absolute;
+  font-family: 'Jost', sans-serif;
+  font-size: 4rem;
+  color: #fff;
+  opacity: 0;
+  z-index: 2;
+}
+
+#loader-circle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: center;
+  z-index: 1;
+}
+
+#content {
+  opacity: 0;
+  visibility: hidden;
+}
