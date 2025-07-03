@@ -12,7 +12,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0;                 // 下端基準
+  bottom: -10vh;                 // 下端基準
   width: 100%;
 
   /* 画面幅に応じて可変： 25vw を基準にしつつ
@@ -38,7 +38,7 @@
   /* 紙飛行機 ------------------------------ */
   .plane {
     position: absolute;
-    top: 20%;                         // パス終端 (y ≒ 75/500) に合わせる
+    bottom: 33vh;                         // パス終端 (y ≒ 75/500) に合わせる
     right: 20%;                       // パス終端 (x ≒ 880/1000) に合わせる
     width: 48px;
     height: 48px;
