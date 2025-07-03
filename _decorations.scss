@@ -1,0 +1,61 @@
+/* -------------------------------------------------
+   HERO : 飛行パス＋紙飛行機＋雲
+   ------------------------------------------------- */
+@use '../utilities/variables' as *;
+
+.hero {
+  position: relative;
+  overflow: hidden;
+
+  /* 点線パス ------------------------------ */
+  .flight-path {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -10vh;                 // 下端基準
+  width: 100%;
+
+  /* 画面幅に応じて可変： 25vw を基準にしつつ
+     180px 〜 320px の範囲にクランプ           */
+  height: clamp(160px, 100vw, 320px);
+
+  /* ← `aspect-ratio` と preserveAspectRatio は不要 */
+  pointer-events: none;
+  z-index: 0;
+  
+
+    path {
+      fill: none;
+      stroke: $color-accent;          // 例 #A9C7D4
+      stroke-width: 4;
+      stroke-dasharray: 12 10;
+      stroke-linecap: round;
+      stroke-linejoin: round;         // 角を丸く
+      opacity: .45;
+    }
+  }
+
+  /* 紙飛行機 ------------------------------ */
+  .plane {
+    position: absolute;
+    bottom: 33vh;                         // パス終端 (y ≒ 75/500) に合わせる
+    right: 20%;                       // パス終端 (x ≒ 880/1000) に合わせる
+    width: 48px;
+    height: 48px;
+    color: #e84c9a;             // 例 #1f3247
+    stroke-width: 2;
+    fill: none;
+    transform: rotate(10deg);
+    z-index: 2;                       // 雲より上
+  }
+
+
+}
+/* 1024px 以下では装飾を非表示 ---------- */
+@media (max-width: 1024px) {
+  .hero {
+    .flight-path,
+    .plane,
+    .cloud { display: none; }
+  }
+}
