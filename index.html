@@ -1,420 +1,420 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Achive On - Portfolio</title>
-  <link rel="icon" href="logo.png" type="image/png">
-  <link rel="stylesheet" href="css/style.css">
-  <!-- Google Fonts: Noto Sans JP -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AchiOn - Portfolio</title>
+    <meta name="description" content="AchiOnのポートフォリオサイト。Web制作（サイト/LP）・チラシ等のデザイン・動画編集・業務効率化まで、課題を整えるデザインで解決します。" />
+    <link rel="icon" href="./img/favicon.png" type="image/png" />
+
+    <!-- OGP（デプロイ先URLに合わせて og:url / og:image を調整） -->
+    <meta property="og:title" content="AchiOn - Portfolio" />
+    <meta property="og:description" content="課題を整える、ウェブデザイン。Web制作・デザイン・業務効率化のポートフォリオサイトです。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://achieveon.github.io/portfolio/" />
+    <meta property="og:image" content="https://achieveon.github.io/portfolio/img/hero__image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@achiachi_dayo" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@4.0.1/destyle.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Google Fonts: Noto Sans JP -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap" rel="stylesheet">
-  <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  integrity="sha512-pOa9Oj4Vn0b1N3QzhYvNCM0XK76XUxrT1i2eTkjW+v4xjpYXG7+g6czlScJnD5Qv5jjuSfqWDeVosY7Vw3h5Vg=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-/>
-<link
-       rel="stylesheet"
-       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-       crossorigin="anonymous"
-     />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.min.css">
 
-    <script type="module"
-    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js">
-  </script>
-  <script nomodule
-    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js">
-  </script>
-  
-  <meta property="og:url" content="https://achieveon.github.io/portfolio/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Achive On - Portfolio" />
-  <meta property="og:description" content="ACHIONのポートフォリオサイト" />
-  <meta property="og:site_name" content="Achive On - Portfolio" />
-  <meta property="og:image" content="https://achieveon.github.io/portfolio/ogp.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:site" content="@achiachi_dayo" />
-</head>
-<body id="top">
-  <!-- ローディング画面 -->
-  <div id="loader">
-    <img id="loader-logo" src="./assets/images/opening.png" alt="Achion ロゴ">
-    <div id="loader-text">ACHION</div>
-    <div id="loader-circle"></div>
-  </div>
+  </head>
+  <body class="site">
+    <header class="hero">
+      <div class="hero__left">
+        <h1 class="hero__title">
+          <span class="hero__title-en">AchiOn</span>
+          <span class="hero__title-ja-group">
+            <span class="hero__title-ja">ポートフォリオサイト</span>
+            <span class="hero__title-sub">課題を整える、ウェブデザイン</span>
+          </span>
+        </h1>
+      </div>
 
-<div id="content">
-  
-<!-- ヘッダー -->
-<header>
-  <div class="header-inner">
-    <a href="#top" class="logo">
-      <img src="./assets/images/logo.png" alt="Achive On ロゴ" />
-      <span class="logo-text">ACHION</span>
-    </a>
+      <div class="hero__center">
+        <img class="hero__image" src="./img/hero__image.png" alt="ヒーロー画像" />
+      </div>
 
-    <!-- デスクトップ用ナビ -->
-    <nav class="nav-desktop">
-      <ul class="nav-list">
-        <li><a href="#service">SERVICE</a></li>
-        <li><a href="#works">WORKS</a></li>
-        <li><a href="#flow">FLOW</a></li>
-        <li><a href="#qa">Q&amp;A</a></li>
-        <li><a href="#contact">CONTACT</a></li>
-      </ul>
-    </nav>
+      <nav class="hero__right" aria-label="メインメニュー">
+        <button
+          class="hero__hamburger"
+          type="button"
+          aria-label="メニューを開く"
+          aria-expanded="false"
+          aria-controls="hero-menu"
+        >
+          <span></span>
+          <span></span>
+        </button>
+        <ul id="hero-menu" class="hero__menu" role="list">
+          <li><a href="#about">わたしについて</a></li>
+          <li><a href="#works">つくったもの</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </header>
 
-    <!-- ハンバーガーボタン -->
-    <button class="hamburger" aria-label="メニューを開く">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </div>
+    <main id="main-content">
+      <section id="about" class="section about">
+        <h2 class="section__title">わたしについて</h2>
+        <div class="about__grid">
+          <figure class="about__media">
+            <img src="img/myphoto.png" alt="AchiOnの似顔絵イラスト" loading="lazy" decoding="async" />
+          </figure>
+          <div class="about__content">
+            <div class="about__intro">
+              <p class="about__lead">ご相談の“困りごと”を整理し、目的に合うデザインで解決することを大切にしています。</p>
+              <p>Web制作（サイト/LP）や、チラシなどのデザイン、動画編集、業務の効率化まで対応。<br />無理なく運用できる形を提案いたします。</p>
+              <p>2024年からSUNABACOで学びを継続し、実案件を想定した制作・実装を積み重ねています。</p>
+              <p>趣味：柏レイソルの応援・ライブ・テニス・ゴルフ・漫画</p>
+            </div>
+            <div class="about__skills" aria-label="対応領域">
+              <p>ウェブ：HTML / CSS / SCSS / JavaScript / WordPress / Studio</p>
+              <p>デザイン：Figma / Illustrator / Photoshop / Premiere / Canva</p>
+              <p>効率化：Google Apps Script / VBA</p>
+            </div>
+            <p class="about__more">詳細はこちらから</p>
+          </div>
+        </div>
+      </section>
 
-  <!-- モバイル用スライドナビ -->
-  <nav class="nav-mobile">
-    <ul class="nav-list">
-      <li><a href="#service">SERVICE</a></li>
-      <li><a href="#works">WORKS</a></li>
-      <li><a href="#flow">FLOW</a></li>
-      <li><a href="#qa">Q&amp;A</a></li>
-      <li><a href="#contact">CONTACT</a></li>
-    </ul>
-  </nav>
-</header>
+      <section id="works" class="section">
+        <h2 class="section__title">つくったもの</h2>
+        <div class="works-list">
+          <article class="works-item">
+            <div class="works-item__image-wrap">
+              <img class="works-item__image" src="img/wooden2026.jpg" alt="WOODEN STUDIOのWebサイト（PC・スマホ表示）" loading="lazy" decoding="async" />
+            </div>
+            <div class="works-item__body">
+              <h3 class="works-item__name">家具ブランドのWebサイト制作</h3>
+              <p class="works-item__desc">プログラミングスクールの課題として制作。Web制作の基礎から設計・実装までを一貫して経験するために取り組みました。</p>
+              <p class="works-item__credit">#HTML #CSS #SCSS #JavaScript #GSAP</p>
+              <a class="works-item__link" href="https://achieveon.github.io/woodenstudio2026/" target="_blank" rel="noopener noreferrer">サイトはこちらから</a>
+            </div>
+          </article>
+
+          <article class="works-item">
+            <div class="works-item__image-wrap">
+              <img class="works-item__image" src="img/tesla_clinic.png" alt="TMS治療ランディングページのファーストビュー" loading="lazy" decoding="async" />
+            </div>
+            <div class="works-item__body">
+              <h3 class="works-item__name">TMS治療のランディングページ</h3>
+              <p class="works-item__desc">TMS治療を初めて知る方にも伝わるよう、専門情報を整理し、予約導線までを丁寧に設計しました。</p>
+              <p class="works-item__credit">#Studio</p>
+              <p class="works-item__note">※クローズ済みの実案件のため、現在は画像でのご紹介となります</p>
+            </div>
+          </article>
+
+          <article class="works-item">
+            <div class="works-item__image-wrap">
+              <img class="works-item__image" src="img/sunashop.png" alt="SUNASHOPオンラインショップのトップページ" loading="lazy" decoding="async" />
+            </div>
+            <div class="works-item__body">
+              <h3 class="works-item__name">雑貨オンラインショップのWebサイト制作</h3>
+              <p class="works-item__desc">架空の生活雑貨ショップ「SUNASHOP」のECサイトを想定して制作。商品カテゴリの切り替えやスクロール連動の動きなど、買い物が楽しくなる画面づくりを意識しました。</p>
+              <p class="works-item__credit">#HTML #CSS #JavaScript #AOS</p>
+              <a class="works-item__link" href="https://achieveon.github.io/sunashop/" target="_blank" rel="noopener noreferrer">サイトはこちらから</a>
+            </div>
+          </article>
+
+          <article class="works-item">
+            <div class="works-item__image-wrap">
+              <img class="works-item__image" src="img/kitakaze.png" alt="おむすび処 北風のWebサイト（PC・スマホ表示）" loading="lazy" decoding="async" />
+            </div>
+            <div class="works-item__body">
+              <h3 class="works-item__name">おにぎり専門店のWebサイト制作</h3>
+              <p class="works-item__desc">架空のおにぎり専門店「おむすび処 北風」の公式サイトとして制作。WordPressのオリジナルテーマを開発し、お知らせやメニューをお店側で更新できる構成にしました。</p>
+              <p class="works-item__credit">#WordPress #PHP #HTML #CSS #JavaScript</p>
+            </div>
+          </article>
+
+          <article class="works-item">
+            <div class="works-item__image-wrap">
+              <img class="works-item__image" src="img/biztech.png" alt="対談動画のサムネイル（Stateside BizTech）" loading="lazy" decoding="async" />
+            </div>
+            <div class="works-item__body">
+              <h3 class="works-item__name">オウンドメディア 対談動画編集</h3>
+              <p class="works-item__desc">対談動画の編集を担当し、音声調整およびテロップの挿入などを行いました。</p>
+              <p class="works-item__credit">#Premiere</p>
+              <a class="works-item__link" href="https://youtu.be/5mUJ5bq-Xx4?si=k-Gwqj0YzryWI6Dk" target="_blank" rel="noopener noreferrer">動画はこちらから</a>
+            </div>
+          </article>
+
+          <article class="works-item works-item--text">
+            <div class="works-item__body">
+              <h3 class="works-item__name">業務効率化ツールの開発</h3>
+              <p class="works-item__desc">職場や身のまわりの「毎回手作業で大変…」を、GASやkintone、Excelで仕組み化しています。守秘の関係で画像は控えていますが、たとえばこんな例があります。</p>
+              <ul class="works-item__examples">
+                <li>集計業務の自動化 — アンケートや成績の集計・グラフ化を、手作業からワンクリックに</li>
+                <li>kintoneでの帳票出力 — 申請データからPDF・Excel帳票を出力する仕組みを構築</li>
+                <li>業務工程表の作成 — 進捗がひと目でわかるガントチャートをExcelで整備</li>
+              </ul>
+              <p class="works-item__credit">#GoogleAppsScript #スプレッドシート #kintone #Excel</p>
+            </div>
+          </article>
+
+          <div class="works-circle-strip" aria-label="Circleギャラリー">
+            <div class="works-circle-strip__track">
+              <div class="works-circle-strip__group">
+                <img src="img/Circle/cowork.png" alt="コワーキングスペースのサイト" loading="lazy" decoding="async" />
+                <img src="img/Circle/hotcook.png" alt="ホットクックのレシピ紹介" loading="lazy" decoding="async" />
+                <img src="img/Circle/sand2025.png" alt="SUNABACO制作物 2025" loading="lazy" decoding="async" />
+                <img src="img/Circle/short1.png" alt="ショート動画のサムネイル" loading="lazy" decoding="async" />
+                <img src="img/Circle/biztech-20251114.png" alt="Stateside BizTech 対談動画サムネイル" loading="lazy" decoding="async" />
+                <img src="img/Circle/biztech-20251118-kouhen.png" alt="Stateside BizTech 対談動画サムネイル 後編" loading="lazy" decoding="async" />
+                <img src="img/Circle/biztech-20251118-zenpen.png" alt="Stateside BizTech 対談動画サムネイル 前編" loading="lazy" decoding="async" />
+                <img src="img/Circle/sunashop.png" alt="SUNASHOPのトップページ" loading="lazy" decoding="async" />
+                <img src="img/Circle/wooden24.png" alt="WOODEN STUDIOのトップページ" loading="lazy" decoding="async" />
+                <img src="img/Circle/kyoshoku-seminar-2022.png" alt="教職セミナー2022のデザイン" loading="lazy" decoding="async" />
+              </div>
+              <div class="works-circle-strip__group" aria-hidden="true">
+                <img src="img/Circle/cowork.png" alt="" loading="lazy" decoding="async" />
+                <img src="img/Circle/hotcook.png" alt="" loading="lazy" decoding="async" />
+                <img src="img/Circle/sand2025.png" alt="" loading="lazy" decoding="async" />
+                <img src="img/Circle/short1.png" alt="" loading="lazy" decoding="async" />
+                <img src="img/Circle/biztech-20251114.png" alt="" loading="lazy" decoding="async" />
+                <img src="img/Circle/biztech-20251118-kouhen.png" alt="" loading="lazy" decoding="async" />
+                <img src="img/Circle/biztech-20251118-zenpen.png" alt="" loading="lazy" decoding="async" />
+                <img src="img/Circle/sunashop.png" alt="" loading="lazy" decoding="async" />
+                <img src="img/Circle/wooden24.png" alt="" loading="lazy" decoding="async" />
+                <img src="img/Circle/kyoshoku-seminar-2022.png" alt="" loading="lazy" decoding="async" />
+              </div>
+            </div>
+          </div>
 
 
-  <!-- ヒーローセクション -->
-    <section class="hero">
-     <div class="container">
-         <p class="hero-lead">Achive On</p>
-        <h2 class="hero-title">Portfolio Site</h2>
-         <p class="hero-description">Web Design</p>
-     </div>
+        </div>
+      </section>
 
-<!-- ───── 飛行パス ───── -->
-  <svg class="flight-path"
-       viewBox="0 0 1000 500"
-       preserveAspectRatio="none"
-       aria-hidden="true">
-    <path d="
-  M250 260
-  Q320 220 380 200
-  Q430 180 480 230
-  Q540 280 600 170
-  C700  80 640   0 500 120
-  S340 320 560 320
-  S800 210 880 120
-  S700 100 800  -50
-  T880  0
-  "
-    fill="none"/>
-  </svg>
+      <section class="process">
+        <h2 class="section__title">制作の流れ</h2>
+        <p class="process__lead">ご相談から公開までの目安です。</p>
+        <div class="process__inner" aria-label="制作フロー">
+          <article class="process__item">
+            <div class="process__icon process__icon--accent" aria-hidden="true">
+              <svg class="process__icon-svg" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <path d="m3 7 9 6 9-6" />
+              </svg>
+            </div>
+            <h3 class="process__title">お問い合わせ</h3>
+            <p class="process__text">まずはお気軽に！</p>
+          </article>
+          <span class="process__arrow" aria-hidden="true">›</span>
+          <article class="process__item">
+            <div class="process__icon process__icon--accent" aria-hidden="true">
+              <svg class="process__icon-svg" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                <path d="M6 5h12v10H10l-4 4V5z" />
+              </svg>
+            </div>
+            <h3 class="process__title">ヒアリング</h3>
+            <p class="process__text">対面／オンライン（Zoom等）</p>
+          </article>
+          <span class="process__arrow" aria-hidden="true">›</span>
+          <article class="process__item">
+            <div class="process__icon process__icon--main" aria-hidden="true">
+              <svg class="process__icon-svg" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                <path d="M6 3h9l3 3v15H6z" />
+                <path d="M15 3v4h4" />
+                <path d="M9 12h6M9 16h6" />
+              </svg>
+            </div>
+            <h3 class="process__title">お見積もり</h3>
+            <p class="process__text">金額・納期を明確に</p>
+          </article>
+          <span class="process__arrow" aria-hidden="true">›</span>
+          <article class="process__item">
+            <div class="process__icon process__icon--accent" aria-hidden="true">
+              <svg class="process__icon-svg" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                <path d="m4 20 4-.8L19 8l-3-3L5 16z" />
+                <path d="m14 6 3 3" />
+              </svg>
+            </div>
+            <h3 class="process__title">制作開始</h3>
+            <p class="process__text">素材をご提供ください</p>
+          </article>
+          <span class="process__arrow" aria-hidden="true">›</span>
+          <article class="process__item">
+            <div class="process__icon process__icon--main" aria-hidden="true">
+              <svg class="process__icon-svg" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                <rect x="4" y="4" width="16" height="16" rx="2" />
+                <path d="m8 12 3 3 5-6" />
+              </svg>
+            </div>
+            <h3 class="process__title">ご確認・修正</h3>
+            <p class="process__text">必要に応じて修正</p>
+          </article>
+          <span class="process__arrow" aria-hidden="true">›</span>
+          <article class="process__item">
+            <div class="process__icon process__icon--deliver" aria-hidden="true">
+              <svg class="process__icon-svg" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                <path d="M7 18h10a4 4 0 0 0 0-8 5 5 0 0 0-9.7-1.4A3.5 3.5 0 0 0 7 18z" />
+                <path d="m12 9.5v7" />
+                <path d="m9.5 12 2.5-2.5L14.5 12" />
+              </svg>
+            </div>
+            <h3 class="process__title">納品</h3>
+            <p class="process__text">データ納品／公開作業</p>
+          </article>
+        </div>
+      </section>
 
+      <section class="faq">
+        <div class="faq__inner">
+          <h2 class="faq__title">よくあるご質問</h2>
+          <p class="faq__lead">
+            ご依頼前によくいただく内容をまとめました。<br />
+            安心してご相談いただけるよう事前にご確認いただけます。
+          </p>
 
-  <!-- 紙飛行機（ゴール位置）-->
-  <ion-icon name="paper-plane-outline"
-            class="plane"
-            role="presentation"></ion-icon>
+          <div class="faq__list">
+            <details class="faq__item">
+              <summary class="faq__question">Q1：まだ内容がはっきり決まっていなくても相談できますか？</summary>
+              <p class="faq__answer">A：はい、大丈夫です。「何を作るべきか」「何を優先すべきか」から一緒に整理します。まずは現状と目的を教えてください。</p>
+            </details>
+
+            <details class="faq__item">
+              <summary class="faq__question">Q2：料金は固定ですか？後から追加になることはありますか？</summary>
+              <p class="faq__answer">A：追加になるのは、たとえば 「ページや機能の追加」 や 「当初想定より大きい作り直し」 など、内容が増える場合です。その際は 作業前に必ずご相談します。</p>
+            </details>
+
+            <details class="faq__item">
+              <summary class="faq__question">Q3：料金の目安を教えてください</summary>
+              <div class="faq__answer">
+                <p>A：内容によって変わりますが、目安は以下の通りです（税込）：</p>
+                <ul>
+                  <li>バナー制作：3,000円〜</li>
+                  <li>チラシ・ショップカード：10,000円〜</li>
+                  <li>ランディングページ（1ページ）：30,000円〜</li>
+                  <li>HTML/CSSサイト・Studioサイト：30,000円〜</li>
+                  <li>WordPressサイト：50,000円〜</li>
+                  <li>業務効率化ツール（GAS等）：10,000円〜</li>
+                </ul>
+                <p>正式なお見積もりはヒアリング後にご提示します。ご予算に合わせた進め方のご相談も可能です。</p>
+              </div>
+            </details>
+
+            <details class="faq__item">
+              <summary class="faq__question">Q4：納品までの日数はどれくらいかかりますか？</summary>
+              <div class="faq__answer">
+                <p>A：ご依頼内容によりますが、目安は以下の通りです：</p>
+                <ul>
+                  <li>バナー制作：3日〜5日程度</li>
+                  <li>HTML/CSSページ制作：2週間程度</li>
+                  <li>WordPress制作：3週間程度</li>
+                </ul>
+                <p>お急ぎの場合も調整できる場合がありますので、ご相談ください。</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <div class="contact__inner">
+          <h2 class="contact__heading">お問い合わせ</h2>
+          <p class="contact__lead">
+            お仕事のご依頼・ご相談などございましたら、下記のフォームからお気軽にご連絡ください。
+          </p>
+          <a class="contact__form-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSe18Lony6X_rw9iruKrqY1X7eHqYCDKJvEy1HQJ8NXyBNg9SA/viewform" target="_blank" rel="noopener noreferrer">
+            <span class="contact__mail-icon" aria-hidden="true"><span class="contact__mail-icon-glyph">✉</span></span>
+            <span>お問い合わせフォームへ</span>
+          </a>
+          <p class="contact__note">ご返信の目安：2〜3日以内（平日夜・週末のご連絡が中心になります）</p>
+        </div>
+      </section>
+    </main>
+
+    <section class="about-detail-panel" aria-hidden="true">
+      <div class="about-detail-panel__inner">
+        <button class="site-dim-close" type="button" aria-label="閉じる">✕</button>
+        <article class="about-detail-card">
+          <h3 class="about-detail-card__title">Web制作</h3>
+          <img class="about-detail-card__image" src="img/web-image1.png" alt="Web制作イメージ" loading="lazy" decoding="async" />
+          <p class="about-detail-card__lead">
+            目的と困りごとを整理し、“使いやすさ”まで含めて形にします。
+          </p>
+          <p class="about-detail-card__scope">Webサイト／LP／簡易Webアプリ</p>
+          <p class="about-detail-card__tags">#HTML #CSS #JavaScript #WordPress #Studio</p>
+        </article>
+
+        <article class="about-detail-card">
+          <h3 class="about-detail-card__title">デザイン</h3>
+          <img class="about-detail-card__image" src="img/web-image2.png" alt="デザインイメージ" loading="lazy" decoding="async" />
+          <p class="about-detail-card__lead">
+            伝えたい内容を見やすく整え、安心感のあるビジュアルに落とし込みます。
+          </p>
+          <p class="about-detail-card__scope">チラシ／ショップカード／名刺／バナー</p>
+          <p class="about-detail-card__tags">#Figma #Illustrator #Photoshop #Premiere #Canva</p>
+        </article>
+
+        <article class="about-detail-card">
+          <h3 class="about-detail-card__title">業務効率化</h3>
+          <img class="about-detail-card__image" src="img/web-image3.png" alt="業務効率化イメージ" loading="lazy" decoding="async" />
+          <p class="about-detail-card__lead">
+            日々の手作業を減らし、現場で続けられる“無理のない自動化”をつくります。
+          </p>
+          <p class="about-detail-card__scope">集計／転記／通知／定型業務の仕組み化</p>
+          <p class="about-detail-card__tags">#GoogleAppsScript #VBA #GoogleWorkspace #Slack</p>
+        </article>
+      </div>
     </section>
 
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div class="site-footer__top">
+          <p class="site-footer__brand">
+            <img class="site-footer__brand-logo" src="./img/achion-logo-circle.png" alt="" aria-hidden="true" />
+            <span class="site-footer__brand-text">AchiOn</span>
+          </p>
+          <div class="site-footer__right">
+            <nav class="site-footer__nav" aria-label="フッターメニュー">
+              <a href="#about">わたしについて</a>
+              <a href="#works">つくったもの</a>
+              <a href="#contact">お問い合わせ</a>
+            </nav>
+            <a class="site-footer__mail-frame" href="https://x.com/achiachi_dayo" target="_blank" rel="noopener noreferrer" aria-label="X（@achiachi_dayo）">
+              <span class="site-footer__mail-icon" aria-hidden="true">
+                <svg class="site-footer__social-icon" viewBox="0 0 24 24" focusable="false">
+                  <path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.26l-4.9-6.96L5.95 22H2.84l7.25-8.28L1 2h6.42l4.43 6.33L18.9 2Zm-1.1 18h1.73L6.47 3.9H4.62L17.8 20Z"/>
+                </svg>
+              </span>
+              <span class="site-footer__social-handle">@achiachi_dayo</span>
+            </a>
+          </div>
+        </div>
+        <p class="site-footer__copyright">© 2026 AchiOn. All Rights Reserved.</p>
+      </div>
+    </footer>
 
-<!-- サービス紹介 -->
-<section id="service" class="section service">
-  <div class="container">
-    <h2 h2 class="section-title">SERVICE <span>できること</span></h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Web制作</h3>
-        <img src="./assets/images/web-image1.png" alt="Web制作" class="card-image">
-        <p class="description">
-          あなたの想いをお聞きし、理想のWebサイトを作り上げます。レスポンシブデザインを標準装備いたします。公開後もアクセス解析をもとに改善提案を行い、あなたのビジネスに誠実に寄り添います。
-        </p>
-        <p class="types">Webサイト／Webアプリ／ランディングページ／バナー など</p>
-        <span class="tag">#HTML　#CSS　#WordPress　#STUDIO　#SCSS　#JavaScript　#GSAP</span>
-      </div>
-      <div class="card">
-        <h3>グラフィックデザイン</h3>
-        <img src="./assets/images/web-image2.png" alt="グラフィックデザイン" class="card-image">
-        <p class="description">
-          チラシやショップカードであなたの魅力を直感的に伝えます。配色やレイアウトの細部まで丁寧に検討し、初めてのお客様にも安心感を与えるデザインをご提案させていただきます。
-        </p>
-        <p class="types">チラシ／ショップカード など</p>
-        <span class="tag">#Canva／#Figma／#Illustrator／#Photoshop</span>
-      </div>
-      <div class="card">
-        <h3>業務効率化</h3>
-        <img src="./assets/images/web-image3.png" alt="業務効率化" class="card-image">
-        <p class="description">
-          日々の業務でお困りの点を丁寧にヒアリングし、使いやすい自動化ツールを開発します。Google WorkspaceやGASを活用し、定型作業を自動化して時間と手間を削減。導入後も操作方法などをサポートします。
-        </p>
-        <p class="types">GoogleWorkspace／Slack など</p>
-        <span class="tag">#Google Apps Script／#VBA</span>
-      </div>
+    <div class="site-scroll-indicator" aria-hidden="true">
+      <svg viewBox="0 0 160 160" role="img" aria-label="スクロール・すくろーる・Scroll">
+        <defs>
+          <path id="site-scroll-indicator-path" d="M 120,80 m -30,0 a 30,30 0 1,1 60,0 a 30,30 0 1,1 -60,0" />
+        </defs>
+        <text>
+          <textPath href="#site-scroll-indicator-path" startOffset="0%" textLength="188" lengthAdjust="spacing">
+            スクロール・すくろーる・Scroll・
+          </textPath>
+        </text>
+        <g class="site-scroll-indicator-chevron">
+          <path d="M112 78l8 8 8-8" />
+          <path d="M112 90l8 8 8-8" />
+          <path d="M112 102l8 8 8-8" />
+        </g>
+      </svg>
     </div>
-  </div>
-    <svg
-    class="section-divider"
-    viewBox="0 0 1000 2"
-    preserveAspectRatio="none"
-    aria-hidden="true"
-  >
-    <line x1="0" y1="1" x2="1000" y2="1" />
-  </svg>
-</section>
 
+    <!-- gsap.js -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
 
-<section id="works" class="section works">
-  <div class="container">
-    <h2 h2 class="section-title">WORKS <span>制作実績</span></h2>
-    <div class="cards">
-      <div class="card">
-        <img src="./assets/images/work1.png" alt="制作物1">
-        <div class="description">
-          <span class="tag">#Web制作・WordPress</span>
-          <p class="title">架空の美術館のWebサイト</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="./assets/images/work2.png" alt="制作物2">
-        <div class="description">
-          <span class="tag">#Web制作・HTML/CSS</span>
-          <p class="title">ポートフォリオサイト</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="./assets/images/work3.png" alt="制作物3">
-        <div class="description">
-          <span class="tag">#Web制作/SCSS/GSAP</span>
-          <p class="title">架空の家具店のWebサイト</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="./assets/images/work4.png" alt="制作物4">
-        <div class="description">
-          <span class="tag">#Web制作</span>
-          <p class="title">学習用Webアプリ</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="./assets/images/work5.png" alt="制作物5">
-        <div class="description">
-          <span class="tag">#Web制作/WordPress</span>
-          <p class="title">飲食店の公式Webサイト</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="./assets/images/work6.png" alt="制作物6">
-        <div class="description">
-          <span class="tag">#グラフィックデザイン/Canva/Illustrator</span>
-          <p class="title">フライヤー／ショップカード</p>
-        </div>
-      </div>
-    </div>
-  </div>
-      <svg
-    class="section-divider"
-    viewBox="0 0 1000 2"
-    preserveAspectRatio="none"
-    aria-hidden="true"
-  >
-    <line x1="0" y1="1" x2="1000" y2="1" />
-  </svg>
-</section>
-
-
-
-
-  <!-- FLOW -->
-  <section id="flow" class="section flow">
-  <div class="container">
-    <h2 class="section-title">FLOW <span>制作の流れ</span></h2>
-    <ul class="timeline">
-      <li>
-        <span class="icon"><i class="fa-solid fa-envelope"></i></span>
-        <p>お問い合わせ<br><small>まずはお気軽に！</small></p>
-      </li>
-      <li>
-        <span class="icon"><i class="fa-solid fa-comments"></i></span>
-        <p>ヒアリング<br><small>対面／Zoomなど</small></p>
-      </li>
-      <li>
-        <span class="icon"><i class="fa-solid fa-file-invoice"></i></span>
-        <p>お見積もり<br><small>金額・納期を明確に</small></p>
-      </li>
-      <li>
-        <span class="icon"><i class="fa-solid fa-pencil-ruler"></i></span>
-        <p>制作開始<br><small>素材をご共有ください</small></p>
-      </li>
-      <li>
-        <span class="icon"><i class="fa-solid fa-check-square"></i></span>
-        <p>ご確認・修正<br><small>必要に応じて修正</small></p>
-      </li>
-      <li>
-        <span class="icon"><i class="fa-solid fa-cloud-upload-alt"></i></span>
-        <p>納品<br><small>データ or サーバ反映</small></p>
-      </li>
-    </ul>
-  </div>
-      <svg
-    class="section-divider"
-    viewBox="0 0 1000 2"
-    preserveAspectRatio="none"
-    aria-hidden="true"
-  >
-    <line x1="0" y1="1" x2="1000" y2="1" />
-  </svg>
-</section>
-
-<!-- Q&A -->
-<section id="qa" class="section qa">
-  <div class="container">
-    <h2 class="section-title">Q&A <span>よくあるご質問</span></h2>
-    <p class="qa-lead">ご依頼前によくいただく内容をまとめました。<br>安心してご相談いただけるよう事前にご確認いただけます。</p>
-
-    <div class="qa-list">
-
-      <div class="qa-item">
-        <button class="qa-question">
-          <span class="qa-question-text">Q1：Webページの納品までの流れを教えてください</span>
-        </button>
-        <div class="qa-answer">
-          <p>A：基本的な流れは以下の通りです：</p>
-          <ol>
-            <li><strong>【お問い合わせ】</strong>…ご希望内容を簡単にお知らせください</li>
-            <li><strong>【ヒアリング】</strong>…対面またはZoomで詳細を伺います</li>
-            <li><strong>【お見積もり・内容確認】</strong>…作業内容・金額・納期をご確認いただきます</li>
-            <li><strong>【制作開始】</strong>…必要な素材などをご提供いただき、作業に入ります</li>
-            <li><strong>【ご確認・修正】</strong>…完成後にご確認いただき、必要に応じて修正します</li>
-            <li><strong>【納品】</strong>…データ納品またはサーバー反映にて納品完了です</li>
-          </ol>
-        </div>
-      </div>
-
-      <div class="qa-item">
-        <button class="qa-question">
-          <span class="qa-question-text">Q2：納品までの日数はどれくらいかかりますか？</span>
-        </button>
-        <div class="qa-answer">
-          <p>A：ご依頼内容によりますが、目安は以下の通りです：</p>
-          <ul>
-            <li>バナー制作：3日〜5日程度</li>
-            <li>HTML/CSSページ制作：2週間程度</li>
-            <li>WordPress制作：3週間程度</li>
-          </ul>
-          <p>お急ぎの場合も調整できる場合がありますので、ご相談ください。</p>
-        </div>
-      </div>
-
-      <div class="qa-item">
-        <button class="qa-question">
-          <span class="qa-question-text">Q3：まだ内容がはっきり決まっていなくても相談できますか？</span>
-        </button>
-        <div class="qa-answer">
-          <p>A：はい、もちろんです！「こんなことできる？」という段階でもお気軽にご相談ください。内容を整理しながら一緒に進めていければと思います。</p>
-        </div>
-      </div>
-
-      <div class="qa-item">
-        <button class="qa-question">
-          <span class="qa-question-text">Q4：料金は固定ですか？後から追加になることはありますか？</span>
-        </button>
-        <div class="qa-answer">
-          <p>A：原則として、事前にお見積もりした金額で進めます。大きな追加や変更が発生した場合は、その都度ご相談させていただきますのでご安心ください。</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-      <svg
-    class="section-divider"
-    viewBox="0 0 1000 2"
-    preserveAspectRatio="none"
-    aria-hidden="true"
-  >
-    <line x1="0" y1="1" x2="1000" y2="1" />
-  </svg>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="section contact">
-  <div class="container">
-    <h2 class="section-title">CONTACT <span>お問い合わせ</span></h2>
-    <p class="contact-lead">お仕事のご依頼・ご相談などございましたら下記までお気軽にご連絡ください。改めてご返信いたします。</p>
-  <div class="contact-mail">
-  <a href="mailto:aaa@aaa.com" class="contact-email">
-    <!-- ===== インライン SVG ===== -->
-    <svg xmlns="http://www.w3.org/2000/svg"
-         class="icon"
-         viewBox="0 0 24 24"
-         fill="none"
-         stroke-width="1.5"
-         stroke="currentColor"
-         aria-hidden="true">
-      <path stroke-linecap="round" stroke-linejoin="round"
-            d="M2.25 6.75a.75.75 0 0 1 .75-.75h18a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-18a.75.75 0 0 1-.75-.75V6.75z"/>
-      <path stroke-linecap="round" stroke-linejoin="round"
-            d="m2.25 6.75 9.72 7.29a.75.75 0 0 0 .88 0l9.65-7.24"/>
-    </svg>
-    aaa@aaa.com
-  </a>
-</div>
-    <svg
-    class="section-divider"
-    viewBox="0 0 1000 2"
-    preserveAspectRatio="none"
-    aria-hidden="true"
-  >
-    <line x1="0" y1="1" x2="1000" y2="1" />
-  </svg>
-</section>
-
-
-  <!-- フッター -->
-  <footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-main">
-    <!-- ロゴ＋サイト名 -->
-    <div class="footer-logo">
-      <img src="./assets/images/logo.png" alt="Achi ON ロゴ" />
-      <span class="footer-logo-text">ACHION</span>
-    </div>
-    <!-- 連絡先 -->
-    <div class="footer-contact">
-       <div class="footer-contact">
-        <a
-  href="https://twitter.com/achiachi_dayo"
-  class="footer-social"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <img
-    src="https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/x.svg"
-    alt="X"
-    class="icon"
-  />
-  @achiachi_dayo
-</a>
-
-</div>
-</div>
-
-
-
-    <!-- コピーライト -->
-    <div class="footer-copy">
-      © 2025 ACHION. All Rights Reserved.
-    </div>
-  </div>
-</footer>
-</div>
-
-  <script src="./assets/js/main.js"></script>
-</body>
+    <script src="./src/main.js"></script>
+  </body>
 </html>

@@ -1,0 +1,137 @@
+@use "../abstracts" as *;
+
+.site-footer {
+  padding: 0;
+}
+
+.site-footer__inner {
+  width: min(100% - 48px, 1280px);
+  margin-inline: auto;
+  border-top: 1px solid $color-sub;
+  padding: 32px 0 32px;
+}
+
+.site-footer__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.site-footer__right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+.site-footer__brand {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: "Jost", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: $color-text;
+}
+
+.site-footer__brand-logo {
+  display: block;
+  width: auto;
+  height: 40px;
+}
+
+.site-footer__nav {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+
+.site-footer__nav a {
+  position: relative;
+  display: inline-block;
+  color: $color-text;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.site-footer__nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 1px;
+  background: $color-text;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.2s ease;
+}
+
+.site-footer__nav a:hover::after,
+.site-footer__nav a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.site-footer__mail-frame {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.site-footer__social-handle {
+  color: $color-text;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+}
+
+.site-footer__mail-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: $color-main;
+  color: #fff;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.site-footer__social-icon {
+  width: 16px;
+  height: 16px;
+  fill: #fff;
+}
+
+.site-footer__copyright {
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.6;
+  color: $color-text;
+}
+
+@media (max-width: 960px) {
+  .site-footer__top {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .site-footer__right {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .site-footer__nav {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem 1.5rem;
+  }
+}

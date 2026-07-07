@@ -1,0 +1,148 @@
+@use "../abstracts" as *;
+
+.contact {
+  padding: 56px 0;
+}
+
+.contact__inner {
+  position: relative;
+  width: 1280px;
+  margin-inline: auto;
+}
+
+.contact__heading {
+  margin: 0 0 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: $font-base;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.03em;
+  color: $color-main;
+}
+
+.contact__heading::before {
+  content: "";
+  width: 8px;
+  height: 1.4em;
+  background: currentColor;
+  flex: 0 0 auto;
+}
+
+.contact__lead {
+  margin: 0 auto 32px;
+  max-width: 1280px;
+  text-align: left;
+  font-family: $font-base;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.contact__form-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 14px 40px;
+  border-radius: 999px;
+  background: $color-main;
+  color: #fff;
+  text-decoration: none;
+  font-family: $font-base;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 6px 18px rgba($color-main, 0.18);
+}
+
+.contact__form-btn:hover,
+.contact__form-btn:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba($color-main, 0.24);
+}
+
+.contact__form-btn:focus-visible {
+  outline: 2px solid rgba($color-main, 0.35);
+  outline-offset: 3px;
+}
+
+.contact__note {
+  margin: 20px auto 0;
+  width: fit-content;
+  font-size: 13px;
+  line-height: 1.7;
+  color: color-mix(in srgb, $color-text 75%, $color-base 25%);
+}
+
+.contact__mail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: fit-content;
+  padding: 0;
+  margin: 0 auto;
+  color: $color-main;
+  text-decoration: none;
+  font-family: $font-base;
+  font-size: 16px;
+  line-height: 1.2;
+  transition: color 0.2s ease;
+}
+
+.contact__mail-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: $color-accent;
+  color: #fff;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.contact__mail-icon-glyph {
+  display: inline-block;
+  transform: translateY(-2px);
+}
+
+.contact__mail:hover,
+.contact__mail:focus-visible {
+  color: $color-main;
+}
+
+.contact__mail:active {
+  color: $color-main;
+}
+
+.contact__mail:focus-visible {
+  outline: 2px solid rgba($color-main, 0.2);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (max-width: 1320px) {
+  .contact__inner {
+    width: calc(100% - 32px);
+  }
+
+  .contact__heading {
+    font-size: 40px;
+  }
+
+  .contact__lead {
+    font-size: 16px;
+  }
+
+  .contact__mail {
+    font-size: 16px;
+  }
+}

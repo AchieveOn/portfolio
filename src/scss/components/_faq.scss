@@ -1,0 +1,109 @@
+@use "../abstracts" as *;
+
+.faq {
+  background: $color-base;
+  padding: 56px 0;
+}
+
+.faq__inner {
+  width: min(100% - 48px, 1280px);
+  margin-inline: auto;
+}
+
+.faq__title {
+  margin: 0 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: $color-main;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.faq__title::before {
+  content: "";
+  width: 8px;
+  height: 1.4em;
+  background: currentColor;
+  flex: 0 0 auto;
+}
+
+.faq__lead {
+  margin: 0 0 32px;
+  color: $color-text;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.faq__list {
+  width: min(100%, 880px);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq__item {
+  border-left: 2px solid $color-sub;
+  background: color-mix(in srgb, $color-base 92%, $color-sub 8%);
+}
+
+.faq__question {
+  position: relative;
+  list-style: none;
+  cursor: pointer;
+  padding: 18px 56px 18px 28px;
+  color: $color-main;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
+.faq__question::-webkit-details-marker {
+  display: none;
+}
+
+.faq__question::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 22px;
+  width: 10px;
+  height: 10px;
+  border-right: 3px solid rgba($color-text, 0.7);
+  border-bottom: 3px solid rgba($color-text, 0.7);
+  transform: translateY(-60%) rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.faq__item[open] .faq__question::after {
+  transform: translateY(-40%) rotate(-135deg);
+}
+
+.faq__answer {
+  margin: 0;
+  padding: 0 28px 20px;
+  color: $color-text;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.faq__answer p {
+  margin: 0;
+}
+
+.faq__answer ul {
+  margin: 6px 0;
+  padding-left: 1.2em;
+}
+
+.faq__answer li {
+  margin: 0;
+}
+
+@media (max-width: 960px) {
+  .faq__title {
+    font-size: 32px;
+  }
+}
